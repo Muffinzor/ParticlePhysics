@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ParticlePhysics.cpp">
+    <ClCompile Include="ParticlePhysics/ParticlePhysics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Particle.cpp">
+    <ClCompile Include="ParticlePhysics/Particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CellularMatrix.cpp">
+    <ClCompile Include="ParticlePhysics/CellularMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Particle.h">
+    <ClInclude Include="ParticlePhysics/Particle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CellularMatrix.h">
+    <ClInclude Include="ParticlePhysics/CellularMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
