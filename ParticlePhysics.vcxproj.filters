@@ -18,18 +18,36 @@
     <ClCompile Include="ParticlePhysics/ParticlePhysics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ParticlePhysics/Particle.cpp">
+    <ClCompile Include="ParticlePhysics/Particles/Particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ParticlePhysics/CellularMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ParticlePhysics/InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticlePhysics/Particles/SandParticle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticlePhysics/Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticlePhysics/Particles/SandParticle.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ParticlePhysics/Particle.h">
+    <ClInclude Include="ParticlePhysics/Particles/Particle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ParticlePhysics/CellularMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticlePhysics/InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticlePhysics/Utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

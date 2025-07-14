@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "CellularMatrix.h"
+#include "Grid/CellularMatrix.h"
+#include "InputManager.h"
 
 const int CELL_SIZE = 2;
 const int GRID_WIDTH = 400;
@@ -10,26 +11,40 @@ int main() {
 	CellularMatrix matrix(GRID_WIDTH, GRID_HEIGHT);
 
 	sf::RenderWindow window(sf::VideoMode({ GRID_WIDTH * CELL_SIZE, GRID_HEIGHT * CELL_SIZE }), "Particles!");
-	sf::RectangleShape cellShape(sf::Vector2f(CELL_SIZE, CELL_SIZE));
 
-	sf::Color white = sf::Color::White;
-	sf::Color blue = sf::Color::Blue;
-	matrix.set_cell(200, 200, new Particle(white));
-	matrix.set_cell(250, 250, new Particle(blue));
+	InputManager inputManager(matrix, window, CELL_SIZE);
+
+	sf::Clock clock;
+	const sf::Time timePerUpdate = sf::seconds(1.f / 60.f);
+	sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
+	int frameCount = 0;
+	sf::Clock fpsClock;
 
 	
 	while (window.isOpen()) {
+		frameCount++;
+		if (fpsClock.getElapsedTime().asSeconds() >= 1.0f) {
+			std::cout << "FPS: " << frameCount << "Particles: " << matrix.particles << std::endl;
+			frameCount = 0;
+			fpsClock.restart();
+		}
 
 		while (const std::optional event = window.pollEvent()) {
-
 			if (event->is<sf::Event::Closed>())
 				window.close();
 		}
 
-		window.clear();
-		matrix.display_matrix(cellShape, window, CELL_SIZE);
-		window.display();
+		timeSinceLastUpdate += clock.restart();
+		if (timeSinceLastUpdate >= timePerUpdate) {
+			matrix.update_all_cells();
+			inputManager.handle_input();
+		}
 
+		window.clear();
+		matrix.display_matrix(window, CELL_SIZE);
+		matrix.display_chunk_debug(window, CELL_SIZE);
+		window.display();
 	}
 }
 

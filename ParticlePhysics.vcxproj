@@ -76,10 +76,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\CodeProjects\SFML-3.0.0\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\CodeProjects\SFML-3.0.0\lib;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -90,10 +93,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\CodeProjects\SFML-3.0.0\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\CodeProjects\SFML-3.0.0\lib;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,12 +109,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>D:\CodeProjects\SFML-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\CodeProjects\SFML-3.0.0\include;D:\CodeProjects\ParticlePhysics\ParticlePhysics</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\CodeProjects\SFML-3.0.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\CodeProjects\SFML-3.0.0\lib;D:\CodeProjects\SFML-3.0.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -120,22 +126,32 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>D:\CodeProjects\SFML-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\CodeProjects\SFML-3.0.0\include;D:\CodeProjects\ParticlePhysics\ParticlePhysics</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\CodeProjects\SFML-3.0.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\CodeProjects\SFML-3.0.0\lib;D:\CodeProjects\SFML-3.0.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ParticlePhysics/CellularMatrix.cpp" />
-    <ClCompile Include="ParticlePhysics/Particle.cpp" />
+    <ClCompile Include="ParticlePhysics/InputManager.cpp" />
+	<ClCompile Include="ParticlePhysics/ThreadPool.cpp" />
+    <ClCompile Include="ParticlePhysics/Grid/CellularMatrix.cpp" />
+	<ClCompile Include="ParticlePhysics/Grid/Chunk.cpp" />
+    <ClCompile Include="ParticlePhysics/Particles/Particle.cpp" />
+    <ClCompile Include="ParticlePhysics/Particles/SandParticle.cpp" />
     <ClCompile Include="ParticlePhysics/ParticlePhysics.cpp" />
+    <ClCompile Include="ParticlePhysics/Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ParticlePhysics/CellularMatrix.h" />
-    <ClInclude Include="ParticlePhysics/Particle.h" />
+    <ClInclude Include="ParticlePhysics/InputManager.h" />
+	<ClInclude Include="ParticlePhysics/ThreadPool.h" />
+    <ClInclude Include="ParticlePhysics/Grid/CellularMatrix.h" />
+	<ClInclude Include="ParticlePhysics/Grid/Chunk.h" />
+    <ClInclude Include="ParticlePhysics/Particles/Particle.h" />
+    <ClCompile Include="ParticlePhysics/Particles/SandParticle.h" />
+    <ClInclude Include="ParticlePhysics/Utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
